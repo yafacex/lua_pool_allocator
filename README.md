@@ -31,6 +31,13 @@ test_vector use time:0.115000 / 0.167000  =  68.8%
 test_small_strings use time:0.344000 / 0.412000 = 83.4%
 ```
 
+build_all.bat    build lua54.exe and lua54_pool.exe with cmake
+
+run_benchmark_tests.bat    run benchmark test with tests/test.lua
+
+run_test_suites.bat    run lua-5.4.4-tests
+
+
 
 
 开发游戏多年，想优化下lua的内存分配，尤其在游戏计算时用到大量向量计算，分配了很多临时table的情况。
@@ -58,3 +65,11 @@ lua_State *L = lua_newstate(pool_alloc,NULL);
 luaopen_alloc(L);
 ```
 可以注册alloc模块，通过alloc.getStat()可以看到缓存的统计参数包括缓存命中，block大小，chunk个数等。
+
+
+
+build_all.bat    通过cmake生成lua54.exe和lua54_pool.exe
+
+run_benchmark_tests.bat    执行性能测试文件tests/test.lua，结果输出到benchmark目录
+
+run_test_suites.bat    run lua-5.4.4-tests  跑lua官方的测试，确保没有问题。
