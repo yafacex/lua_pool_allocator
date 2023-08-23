@@ -15,10 +15,12 @@ lua_State *L = lua_newstate(pool_alloc,NULL);
 ```
 
 You can also call
+```c
 luaopen_alloc(L);
+```
 which can register alloc module,then call 
 local stats = alloc.getStat()
-to get statistics about the cache hit count,chunk count and block count.
+to get statistics infomation about the cache hit count,chunk count and block count.
 
 
 Benchmark:
@@ -47,4 +49,7 @@ lua_State *L = lua_newstate(pool_alloc,NULL);
 ```
 
 
-如果调用luaopen_alloc(L)可以注册alloc模块，通过alloc.getStat()可以看到缓存的统计参数包括缓存命中，block大小，chunk个数等。
+```c
+luaopen_alloc(L);
+```
+可以注册alloc模块，通过alloc.getStat()可以看到缓存的统计参数包括缓存命中，block大小，chunk个数等。
