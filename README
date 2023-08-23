@@ -1,0 +1,44 @@
+This is a lua pool allocator for optimizing performance of allocating small object.
+
+The main idea is prealloc chunks by fixed size and reuse them later.
+
+I come up an idea to optimize lua's default allocator.I search the internet and found no one.
+
+This alloctor speed up 10%~30% testing by some allocating small table and string tests.See it at 'tests' and 'benchmark' 
+
+Install:
+copy src/pool_alloc.h and src/pool_alloc.c to your project 
+
+init_pool_alloc();
+lua_State *L = lua_newstate(pool_alloc,NULL);
+
+You can also call
+luaopen_alloc(L);
+which can register alloc module,then call 
+local stats = alloc.getStat()
+to get statistics about the cache hit count,chunk count and block count.
+
+
+Benchmark:
+
+test_mix use time:2.919000 / 3.657000  = 79.9%
+test_vector use time:0.115000 / 0.167000  =  68.8%
+test_small_strings use time:0.344000 / 0.412000 = 83.4%
+
+
+
+开发游戏多年，想优化下lua的内存分配，尤其在游戏计算时用到大量向量计算，分配了很多临时table的情况。
+网上没有搜到有人给lua写的内存分配器，所以自己写了个，通过了个人写的测试用例和lua的test suites(起码不造成会崩溃)。
+核心思路是对640字节以下的内存申请，预分配内存并复用，类似池化(MemoryPool)。
+有意者可以项目里使用哈，效果可以反馈给我（943100400@qq.com）。
+
+
+
+核心代码在 src/pool_alloc.h and src/pool_alloc.c，拷贝这两个文件到你的工程
+
+调用下面两行启用缓存
+init_pool_alloc();
+lua_State *L = lua_newstate(pool_alloc,NULL);
+
+
+如果调用luaopen_alloc(L)可以注册alloc模块，通过alloc.getStat()可以看到缓存的统计参数包括缓存命中，block大小，chunk个数等。

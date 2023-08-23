@@ -1,0 +1,17 @@
+test_mix use time:3.657000
+test_vector use time:0.167000
+test_small_strings use time:0.412000
+blockSize:16,iCreate:30,iFree:53,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
+blockSize:32,iCreate:228,iFree:8,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
+blockSize:64,iCreate:136,iFree:10,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
+blockSize:96,iCreate:19,iFree:10,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
+blockSize:128,iCreate:26,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
+blockSize:160,iCreate:3,iFree:1,iHitCreate:0,iHitFree:0,blockCount:102,iChunkCount:0
+blockSize:192,iCreate:18,iFree:3,iHitCreate:0,iHitFree:0,blockCount:85,iChunkCount:0
+blockSize:224,iCreate:2,iFree:0,iHitCreate:0,iHitFree:0,blockCount:73,iChunkCount:0
+blockSize:256,iCreate:11,iFree:0,iHitCreate:0,iHitFree:0,blockCount:64,iChunkCount:0
+blockSize:320,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:51,iChunkCount:0
+blockSize:384,iCreate:7,iFree:2,iHitCreate:0,iHitFree:0,blockCount:42,iChunkCount:0
+blockSize:448,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:36,iChunkCount:0
+blockSize:512,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:32,iChunkCount:0
+blockSize:640,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:25,iChunkCount:0
