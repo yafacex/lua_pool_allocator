@@ -7,7 +7,7 @@ I come up an idea to optimize lua's default allocator.I search the internet and 
 This alloctor speed up 10%~30% testing by some allocating small table and string tests.See it at 'tests' and 'benchmark' 
 
 Install:
-copy src/pool_alloc.h and src/pool_alloc.c to your project 
+copy src/pool_alloc.h and src/pool_alloc.c to your project and use code below to create your lua state. 
 
 ```c
 init_pool_alloc();
@@ -34,15 +34,20 @@ test_small_strings use time:0.344000 / 0.412000 = 83.4%
 
 
 开发游戏多年，想优化下lua的内存分配，尤其在游戏计算时用到大量向量计算，分配了很多临时table的情况。
+
 网上没有搜到有人给lua写的内存分配器，所以自己写了个，通过了个人写的测试用例和lua的test suites(起码不造成会崩溃)。
+
 核心思路是对640字节以下的内存申请，预分配内存并复用，类似池化(MemoryPool)。
+
 有意者可以项目里使用哈，效果可以反馈给我（943100400@qq.com）。
+
+性能测试结果在benchmark/lua54.txt和benchmark/lua54_pool.txt查看
 
 
 
 核心代码在 src/pool_alloc.h and src/pool_alloc.c，拷贝这两个文件到你的工程
 
-调用下面两行启用缓存
+调用下面两行创建lua state并启用缓存。
 ```c
 init_pool_alloc();
 lua_State *L = lua_newstate(pool_alloc,NULL);
