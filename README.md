@@ -7,7 +7,7 @@ I come up an idea to optimize lua's default allocator.I search the internet and 
 This alloctor speed up 10%~30% testing by some allocating small table and string tests.See it at 'tests' and 'benchmark' 
 
 Install:
-copy src/pool_alloc.h and src/pool_alloc.c to your project and use code below to create your lua state. 
+copy 'src/pool_alloc.h' and 'src/pool_alloc.c' to your project and use code below to create your lua state. 
 
 ```c
 init_pool_alloc();
@@ -54,7 +54,7 @@ https://github.com/yafacex/lua_pool_allocator/blob/main/src/pool_alloc.c
 
 
 
-核心代码在 src/pool_alloc.h and src/pool_alloc.c，拷贝这两个文件到你的工程
+核心代码在 'src/pool_alloc.h' 和 'src/pool_alloc.c'，拷贝这两个文件到你的工程
 
 https://github.com/yafacex/lua_pool_allocator/blob/main/src/pool_alloc.c
 
