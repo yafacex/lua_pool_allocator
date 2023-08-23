@@ -11,11 +11,11 @@
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
-struct PoolTrunkInfo {
+struct PoolChunkInfo {
 	size_t blockSize;
 	size_t blockCount;
 };
-struct PoolTrunkInfo blockSizeMap[CHUNK_COUNT] =
+struct PoolChunkInfo blockSizeMap[CHUNK_COUNT] =
 {
 	{16,0},
 	{32,0},
@@ -84,15 +84,15 @@ void init_pool_alloc() {
 	memset(Stats,0,sizeof(struct PoolStat) * CHUNK_COUNT);
 	//init size map
 	{
-		int iTrunk = 0;
+		int iChunk = 0;
 		for (int iSize = 1; iSize <= MAX_BLOCK_SIZE; ++iSize) {
-			SizeToChunkId[iSize] = iTrunk;
-			if (iSize == blockSizeMap[iTrunk].blockSize) {
-				++iTrunk;
+			SizeToChunkId[iSize] = iChunk;
+			if (iSize == blockSizeMap[iChunk].blockSize) {
+				++iChunk;
 			}
 		}
 	}
-	//init trunks
+	//init chunks
 	{
 		for (int iChunk = 0; iChunk < CHUNK_COUNT; ++iChunk) {
 			struct PoolChunk* chunk = malloc(sizeof(struct PoolChunk));
