@@ -9,8 +9,10 @@ This alloctor speed up 10%~30% testing by some allocating small table and string
 Install:
 copy src/pool_alloc.h and src/pool_alloc.c to your project 
 
+```c
 init_pool_alloc();
 lua_State *L = lua_newstate(pool_alloc,NULL);
+```
 
 You can also call
 luaopen_alloc(L);
@@ -21,9 +23,11 @@ to get statistics about the cache hit count,chunk count and block count.
 
 Benchmark:
 
+```
 test_mix use time:2.919000 / 3.657000  = 79.9%
 test_vector use time:0.115000 / 0.167000  =  68.8%
 test_small_strings use time:0.344000 / 0.412000 = 83.4%
+```
 
 
 
@@ -37,8 +41,10 @@ test_small_strings use time:0.344000 / 0.412000 = 83.4%
 核心代码在 src/pool_alloc.h and src/pool_alloc.c，拷贝这两个文件到你的工程
 
 调用下面两行启用缓存
+```c
 init_pool_alloc();
 lua_State *L = lua_newstate(pool_alloc,NULL);
+```
 
 
 如果调用luaopen_alloc(L)可以注册alloc模块，通过alloc.getStat()可以看到缓存的统计参数包括缓存命中，block大小，chunk个数等。
