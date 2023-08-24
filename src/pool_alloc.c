@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <lua.h>
 #include "lauxlib.h"
-#define CHUNK_COUNT 14
+#define CHUNK_COUNT 15
 #define MAX_BLOCK_SIZE 640
 #define CHUNK_SIZE 16 * 1024 //16k for L1 cache
 #define BOOL int
@@ -17,6 +17,7 @@ struct PoolChunkInfo {
 };
 struct PoolChunkInfo blockSizeMap[CHUNK_COUNT] =
 {
+	{8,0},//can not be less than 8 bytes
 	{16,0},
 	{32,0},
 	{64,0},

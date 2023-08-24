@@ -1,18 +1,19 @@
-test_mix use time:2.994000
-test_vector use time:0.107000
-test_small_strings use time:0.345000
-blockSize:16,iCreate:0,iFree:0,iHitCreate:2049033,iHitFree:2048001,blockCount:1024,iChunkCount:21840
-blockSize:32,iCreate:0,iFree:0,iHitCreate:2055889,iHitFree:2054666,blockCount:512,iChunkCount:0
-blockSize:64,iCreate:0,iFree:0,iHitCreate:8308318,iHitFree:8307085,blockCount:256,iChunkCount:0
-blockSize:96,iCreate:0,iFree:0,iHitCreate:930,iHitFree:924,blockCount:170,iChunkCount:0
-blockSize:128,iCreate:0,iFree:0,iHitCreate:1029,iHitFree:1,blockCount:128,iChunkCount:0
+test_mix use time:3.015000
+test_vector use time:0.109000
+test_small_strings use time:0.350000
+blockSize:8,iCreate:0,iFree:0,iHitCreate:14,iHitFree:0,blockCount:2048,iChunkCount:21973
+blockSize:16,iCreate:0,iFree:0,iHitCreate:2049020,iHitFree:2048001,blockCount:1024,iChunkCount:15
+blockSize:32,iCreate:0,iFree:0,iHitCreate:2056047,iHitFree:2054823,blockCount:512,iChunkCount:0
+blockSize:64,iCreate:0,iFree:0,iHitCreate:8308322,iHitFree:8307150,blockCount:256,iChunkCount:0
+blockSize:96,iCreate:0,iFree:0,iHitCreate:924,iHitFree:918,blockCount:170,iChunkCount:0
+blockSize:128,iCreate:0,iFree:0,iHitCreate:1030,iHitFree:1,blockCount:128,iChunkCount:0
 blockSize:160,iCreate:0,iFree:0,iHitCreate:3,iHitFree:1,blockCount:102,iChunkCount:0
-blockSize:192,iCreate:0,iFree:0,iHitCreate:19,iHitFree:3,blockCount:85,iChunkCount:0
+blockSize:192,iCreate:0,iFree:0,iHitCreate:20,iHitFree:3,blockCount:85,iChunkCount:0
 blockSize:224,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:73,iChunkCount:0
-blockSize:256,iCreate:0,iFree:0,iHitCreate:1013,iHitFree:0,blockCount:64,iChunkCount:0
+blockSize:256,iCreate:0,iFree:0,iHitCreate:1014,iHitFree:0,blockCount:64,iChunkCount:0
 blockSize:320,iCreate:0,iFree:0,iHitCreate:1,iHitFree:0,blockCount:51,iChunkCount:0
 blockSize:384,iCreate:0,iFree:0,iHitCreate:8,iHitFree:2,blockCount:42,iChunkCount:0
 blockSize:448,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:36,iChunkCount:0
 blockSize:512,iCreate:0,iFree:0,iHitCreate:1002,iHitFree:0,blockCount:32,iChunkCount:0
 blockSize:640,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:25,iChunkCount:0
-totalMem(MB):	341.25
+totalMem(MB):	343.5625

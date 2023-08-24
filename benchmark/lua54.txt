@@ -1,15 +1,16 @@
-test_mix use time:3.665000
-test_vector use time:0.176000
-test_small_strings use time:0.426000
-blockSize:16,iCreate:2049033,iFree:3250053,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
-blockSize:32,iCreate:2056048,iFree:2054825,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
-blockSize:64,iCreate:8308281,iFree:8307081,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
-blockSize:96,iCreate:963,iFree:957,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
-blockSize:128,iCreate:1029,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
+test_mix use time:3.618000
+test_vector use time:0.165000
+test_small_strings use time:0.409000
+blockSize:8,iCreate:14,iFree:1202052,iHitCreate:0,iHitFree:0,blockCount:2048,iChunkCount:0
+blockSize:16,iCreate:2049020,iFree:2048001,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
+blockSize:32,iCreate:2056032,iFree:2054808,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
+blockSize:64,iCreate:8308304,iFree:8307066,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
+blockSize:96,iCreate:957,iFree:951,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
+blockSize:128,iCreate:1030,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
 blockSize:160,iCreate:3,iFree:1,iHitCreate:0,iHitFree:0,blockCount:102,iChunkCount:0
-blockSize:192,iCreate:19,iFree:3,iHitCreate:0,iHitFree:0,blockCount:85,iChunkCount:0
+blockSize:192,iCreate:20,iFree:3,iHitCreate:0,iHitFree:0,blockCount:85,iChunkCount:0
 blockSize:224,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:73,iChunkCount:0
-blockSize:256,iCreate:1013,iFree:0,iHitCreate:0,iHitFree:0,blockCount:64,iChunkCount:0
+blockSize:256,iCreate:1014,iFree:0,iHitCreate:0,iHitFree:0,blockCount:64,iChunkCount:0
 blockSize:320,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:51,iChunkCount:0
 blockSize:384,iCreate:8,iFree:2,iHitCreate:0,iHitFree:0,blockCount:42,iChunkCount:0
 blockSize:448,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:36,iChunkCount:0
