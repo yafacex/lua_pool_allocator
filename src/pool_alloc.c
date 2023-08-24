@@ -63,6 +63,7 @@ void init_chunk(struct PoolChunk* chunk,int iChunk) {
 	chunk->next = NULL;
 	chunk->blocks = malloc(chunk->totalSize);
 	if (chunk->blocks != NULL) {
+		//not necessary,just for debug convenient,you can comment this line
 		memset((void*)chunk->blocks,0xEF,chunk->totalSize);
 	}
 	for (int iBlock = 0; iBlock < chunk->blockCount ; ++iBlock) {
