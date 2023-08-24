@@ -7,7 +7,7 @@
 #include "lauxlib.h"
 #define CHUNK_COUNT 15
 #define MAX_BLOCK_SIZE 640
-#define CHUNK_SIZE 16 * 1024 //16k for L1 cache
+#define CHUNK_SIZE 16 * 1024 //16k for one chunk,from 1k to 16k,the larger the faster(my test)
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
