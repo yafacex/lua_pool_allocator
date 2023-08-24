@@ -1,6 +1,6 @@
-local stats = alloc.getStat()
 collectgarbage("collect")
 local function dumpStat()
+	local stats = alloc.getStat()
 	for _,stat in ipairs(stats)do
 		print(string.format("blockSize:%d,iCreate:%d,iFree:%d,iHitCreate:%d,iHitFree:%d,blockCount:%d,iChunkCount:%d",stat.blockSize,stat.iCreate,stat.iFree,stat.iHitCreate,stat.iHitFree,stat.blockCount,stat.iChunkCount))
 	end
