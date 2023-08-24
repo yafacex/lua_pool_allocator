@@ -62,6 +62,8 @@ local tests = {
 for _,test in ipairs(tests) do
 	local name = test[1]
 	local func = test[2]
+	-- collectgarbage("collect")
+	-- func()--预热缓存,warm up chunks
 	collectgarbage("collect")
 	local t1 = os.clock()
 	func()

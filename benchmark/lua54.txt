@@ -1,19 +1,35 @@
-test_mix use time:3.618000
-test_vector use time:0.165000
-test_small_strings use time:0.409000
-blockSize:8,iCreate:14,iFree:1202052,iHitCreate:0,iHitFree:0,blockCount:2048,iChunkCount:0
-blockSize:16,iCreate:2049020,iFree:2048001,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
-blockSize:32,iCreate:2056032,iFree:2054808,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
-blockSize:64,iCreate:8308304,iFree:8307066,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
-blockSize:96,iCreate:957,iFree:951,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
-blockSize:128,iCreate:1030,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
-blockSize:160,iCreate:3,iFree:1,iHitCreate:0,iHitFree:0,blockCount:102,iChunkCount:0
+test_mix use time:3.688000
+test_vector use time:0.172000
+test_small_strings use time:0.411000
+test_vector use time:0.171000
+test_vector use time:0.178000
+test_vector use time:0.176000
+test_vector use time:0.172000
+test_vector use time:0.172000
+test_vector use time:0.172000
+test_vector use time:0.174000
+test_vector use time:0.173000
+test_small_strings use time:0.413000
+test_small_strings use time:0.421000
+test_small_strings use time:0.445000
+test_small_strings use time:0.411000
+test_small_strings use time:0.411000
+test_small_strings use time:0.413000
+test_small_strings use time:0.434000
+test_small_strings use time:0.419000
+blockSize:8,iCreate:15,iFree:21604049,iHitCreate:0,iHitFree:0,blockCount:2048,iChunkCount:0
+blockSize:16,iCreate:4098022,iFree:4096002,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
+blockSize:32,iCreate:4111718,iFree:4109476,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
+blockSize:64,iCreate:50202452,iFree:50200211,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
+blockSize:96,iCreate:16524,iFree:16518,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
+blockSize:128,iCreate:2032,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
+blockSize:160,iCreate:4,iFree:1,iHitCreate:0,iHitFree:0,blockCount:102,iChunkCount:0
 blockSize:192,iCreate:20,iFree:3,iHitCreate:0,iHitFree:0,blockCount:85,iChunkCount:0
 blockSize:224,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:73,iChunkCount:0
-blockSize:256,iCreate:1014,iFree:0,iHitCreate:0,iHitFree:0,blockCount:64,iChunkCount:0
-blockSize:320,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:51,iChunkCount:0
+blockSize:256,iCreate:2015,iFree:0,iHitCreate:0,iHitFree:0,blockCount:64,iChunkCount:0
+blockSize:320,iCreate:2,iFree:0,iHitCreate:0,iHitFree:0,blockCount:51,iChunkCount:0
 blockSize:384,iCreate:8,iFree:2,iHitCreate:0,iHitFree:0,blockCount:42,iChunkCount:0
 blockSize:448,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:36,iChunkCount:0
-blockSize:512,iCreate:1002,iFree:0,iHitCreate:0,iHitFree:0,blockCount:32,iChunkCount:0
-blockSize:640,iCreate:0,iFree:0,iHitCreate:0,iHitFree:0,blockCount:25,iChunkCount:0
+blockSize:512,iCreate:2004,iFree:0,iHitCreate:0,iHitFree:0,blockCount:32,iChunkCount:0
+blockSize:640,iCreate:1,iFree:0,iHitCreate:0,iHitFree:0,blockCount:25,iChunkCount:0
 totalMem(MB):	0.0
