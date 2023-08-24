@@ -1,10 +1,10 @@
-test_vector use time:0.180000
-test_small_strings use time:4.153000
+test_vector use time:0.173000
+test_small_strings use time:4.149000
 blockSize:8,iCreate:14,iFree:2400054,iHitCreate:0,iHitFree:0,blockCount:2048,iChunkCount:0
 blockSize:16,iCreate:18,iFree:0,iHitCreate:0,iHitFree:0,blockCount:1024,iChunkCount:0
 blockSize:32,iCreate:233,iFree:9,iHitCreate:0,iHitFree:0,blockCount:512,iChunkCount:0
-blockSize:64,iCreate:20381938,iFree:20381732,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
-blockSize:96,iCreate:18231,iFree:18226,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
+blockSize:64,iCreate:20381852,iFree:20381644,iHitCreate:0,iHitFree:0,blockCount:256,iChunkCount:0
+blockSize:96,iCreate:18317,iFree:18312,iHitCreate:0,iHitFree:0,blockCount:170,iChunkCount:0
 blockSize:128,iCreate:28,iFree:1,iHitCreate:0,iHitFree:0,blockCount:128,iChunkCount:0
 blockSize:160,iCreate:3,iFree:1,iHitCreate:0,iHitFree:0,blockCount:102,iChunkCount:0
 blockSize:192,iCreate:22,iFree:3,iHitCreate:0,iHitFree:0,blockCount:85,iChunkCount:0
