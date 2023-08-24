@@ -246,6 +246,7 @@ void* alloc_entry(void *ud, void *ptr, size_t osize, size_t nsize)
 int alloc_getStat(lua_State* L)
 {
 	lua_newtable(L);
+	size_t totalCaheMem = 0;
 
 	for (int iChunk = 0; iChunk < CHUNK_COUNT; ++iChunk) {
 		lua_pushinteger(L,iChunk + 1);
@@ -279,9 +280,18 @@ int alloc_getStat(lua_State* L)
 		lua_pushinteger(L,Stats[iChunk].iChunkCount);
 		lua_settable(L,-3);
 
+		size_t mem = Stats[iChunk].iChunkCount * CHUNK_SIZE;
+		totalCaheMem += mem;
+		lua_pushstring(L,"chunkMem");
+		lua_pushinteger(L,mem);
+		lua_settable(L,-3);
 
 		lua_settable(L,-3);
 	}
+
+	lua_pushstring(L,"cacheMem");
+	lua_pushinteger(L,totalCaheMem);
+	lua_settable(L,-3);
 
 	return 1;
 }

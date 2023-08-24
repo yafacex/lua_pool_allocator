@@ -4,6 +4,7 @@ local function dumpStat()
 	for _,stat in ipairs(stats)do
 		print(string.format("blockSize:%d,iCreate:%d,iFree:%d,iHitCreate:%d,iHitFree:%d,blockCount:%d,iChunkCount:%d",stat.blockSize,stat.iCreate,stat.iFree,stat.iHitCreate,stat.iHitFree,stat.blockCount,stat.iChunkCount))
 	end
+	print("totalMem(MB):",stats.cacheMem / 1024 / 1024)
 end
 
 
@@ -26,6 +27,7 @@ local function test_mix()
 			out[k] = table.concat(all,"#,@")
 			A[k][i] = m
 		end
+		-- collectgarbage("collect")
 	end
 end
 local function test_vector()
@@ -35,6 +37,9 @@ local function test_vector()
 		local v = {x = math.random(),y = math.random()}
 		p.x = v.x * dt
 		p.y = v.y * dt
+		-- if k % 1000 == 0 then
+		-- 	collectgarbage("collect")
+		-- end
 	end
 end
 
@@ -43,6 +48,9 @@ local function test_small_strings()
 		local x = math.random()
 		local y = math.random()
 		local s = "x:" .. tostring(x) .. "," .. "y:" .. tostring(y)
+		-- if k % 1000 == 0 then
+		-- 	collectgarbage("collect")
+		-- end
 	end
 end
 

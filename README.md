@@ -40,15 +40,17 @@ run_test_suites.bat    run lua-5.4.4-tests
 below is core code's link :
 https://github.com/yafacex/lua_pool_allocator/blob/main/src/pool_alloc.c
 
+TODO:Support chunk count max size to avoid too many memory allocatings.
 
 
-开发游戏多年，想优化下lua的内存分配，尤其在游戏计算时用到大量向量计算，分配了很多临时table的情况。
 
-网上没有搜到有人给lua写的内存分配器，所以自己写了个，通过了个人写的测试用例和lua的test suites(起码不造成会崩溃)。
+游戏开发，想优化下lua的内存分配，尤其在游戏计算时用到大量向量计算，分配了很多临时table的情况。
 
 核心思路是对640字节以下的内存申请，预分配内存并复用，类似池化(MemoryPool)。
 
-有意者可以项目里使用哈，效果可以反馈给我（943100400@qq.com）。
+通过了个人写的测试用例和lua的官方test suites。
+
+项目使用还需谨慎，有实验结果的可以反馈给我（943100400@qq.com）。
 
 性能测试结果在benchmark/lua54.txt和benchmark/lua54_pool.txt查看
 
@@ -77,3 +79,6 @@ build_all.bat    通过cmake生成lua54.exe和lua54_pool.exe
 run_benchmark_tests.bat    执行性能测试文件tests/test.lua，结果输出到benchmark目录
 
 run_test_suites.bat    run lua-5.4.4-tests  跑lua官方的测试，确保没有问题。
+
+TODO:
+支持chunk个数上限，避免一帧里创建太多table造成内存过高，且无法回收。
