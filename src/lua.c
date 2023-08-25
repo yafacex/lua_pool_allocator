@@ -19,7 +19,7 @@
 
 #include "lauxlib.h"
 #include "lualib.h"
-#include "pool.h"
+#include "pool_alloc.h"
 
 #if !defined(LUA_PROGNAME)
 #define LUA_PROGNAME		"lua"
@@ -660,7 +660,13 @@ static int pmain (lua_State *L) {
 int main (int argc, char **argv) {
   int status, result;
 
-  lua_State *L = luaL_newstate();  /* create state */
+  lua_State *L = lua_newstate(alloc_entry,NULL);
+  {
+	  luaL_requiref(L, "alloc", luaopen_alloc, 1);
+    lua_pop(L, 1);  /* remove lib */
+  }
+  //lua_State *L = luaL_newstate();  /* create state */
+  //lua_setallocf(L, pool_alloc, NULL);
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
