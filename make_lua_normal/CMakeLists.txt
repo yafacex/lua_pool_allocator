@@ -9,7 +9,8 @@ set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os -Wall -s")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os -Wall -s")
 
 include_directories(
-    ../src
+    ../src/lua54
+    ../src/allocator
 )
 
 add_executable(
