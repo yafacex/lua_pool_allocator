@@ -58,7 +58,7 @@ TODO:Support chunk count max size to avoid too many memory allocatings.
 
 核心代码在 'src/pool_alloc.h' 和 'src/pool_alloc.c'，拷贝这两个文件到你的工程
 
-https://github.com/yafacex/lua_pool_allocator/blob/main/src/pool_alloc.c
+https://github.com/yafacex/lua_pool_allocator/blob/main/src/allocator/pool_alloc.c
 
 调用下面两行创建lua state并启用缓存。
 ```c
