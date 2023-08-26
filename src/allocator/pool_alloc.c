@@ -38,7 +38,7 @@ struct PoolStat {
 	size_t iFree;
 	size_t iHitCreate;
 	size_t iHitFree;
-	size_t iChunkCount;
+	//size_t iChunkCount;
 };
 struct PoolStat Stats[CHUNK_COUNT];
 int SizeToChunkId[MAX_BLOCK_SIZE + 1];
@@ -47,6 +47,7 @@ struct PoolChunk {
 	size_t blockSize;
 	size_t blockCount;
 	size_t totalSize;
+	size_t chunkCount;
 	struct PoolChunk* next;
 	char* blocks;
 };
@@ -184,7 +185,7 @@ void* pool_alloc(void *ud, void *ptr, size_t osize, size_t nsize)
 					ChunkList[iChunk] = newChunk;
 					FreeBlocks[iChunk] = newChunk->blocks;
 					block = newChunk->blocks;
-					Stats[SizeToChunkId[iChunk]].iChunkCount += 1;
+					ChunkList[iChunk]->chunkCount += 1;
 				}
 			}
 			else {
@@ -279,10 +280,10 @@ int alloc_getStat(lua_State* L)
 		lua_settable(L,-3);
 
 		lua_pushstring(L,"iChunkCount");
-		lua_pushinteger(L,Stats[iChunk].iChunkCount);
+		lua_pushinteger(L,ChunkList[iChunk]->chunkCount);
 		lua_settable(L,-3);
 
-		size_t mem = Stats[iChunk].iChunkCount * CHUNK_SIZE;
+		size_t mem = ChunkList[iChunk]->chunkCount * CHUNK_SIZE;
 		totalCaheMem += mem;
 		lua_pushstring(L,"chunkMem");
 		lua_pushinteger(L,mem);
