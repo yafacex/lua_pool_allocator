@@ -38,7 +38,7 @@ run_benchmark_tests.bat    run benchmark test with tests/test.lua
 run_test_suites.bat    run lua-5.4.4-tests
 
 below is core code's link :
-https://github.com/yafacex/lua_pool_allocator/blob/main/src/pool_alloc.c
+https://github.com/yafacex/lua_pool_allocator/blob/main/src/allocator/pool_alloc.c
 
 TODO:Support chunk count max size to avoid too many memory allocatings.
 
