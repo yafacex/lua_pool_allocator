@@ -21,6 +21,7 @@
 #include "lualib.h"
 #include "pool_alloc.h"
 
+
 #if !defined(LUA_PROGNAME)
 #define LUA_PROGNAME		"lua"
 #endif
@@ -96,7 +97,6 @@ static void print_usage (const char *badoption) {
   "  -v        show version information\n"
   "  -E        ignore environment variables\n"
   "  -W        turn warnings on\n"
-  "  -p        use lua without pool allocator\n"
   "  --        stop handling options\n"
   "  -         stop handling options and execute stdin\n"
   ,
@@ -265,7 +265,6 @@ static int handle_script (lua_State *L, char **argv) {
 #define has_v		4	/* -v */
 #define has_e		8	/* -e */
 #define has_E		16	/* -E */
-#define has_p    32	/* -p */
 
 
 /*
@@ -293,11 +292,6 @@ static int collectargs (char **argv, int *first) {
         if (argv[i][2] != '\0')  /* extra characters? */
           return has_error;  /* invalid option */
         args |= has_E;
-        break;
-      case 'p':
-        if (argv[i][2] != '\0')  /* extra characters? */
-          return has_error;  /* invalid option */
-        args |= has_p;
         break;
       case 'W':
         if (argv[i][2] != '\0')  /* extra characters? */
@@ -628,9 +622,6 @@ static int pmain (lua_State *L) {
     lua_pushboolean(L, 1);  /* signal for libraries to ignore env. vars. */
     lua_setfield(L, LUA_REGISTRYINDEX, "LUA_NOENV");
   }
-  if (!(args & has_p)) {
-      init_pool_alloc();
-  }
   luaL_openlibs(L);  /* open standard libraries */
   createargtable(L, argv, argc, script);  /* create table 'arg' */
   lua_gc(L, LUA_GCGEN, 0, 0);  /* GC in generational mode */
@@ -659,10 +650,10 @@ static int pmain (lua_State *L) {
 
 int main (int argc, char **argv) {
   int status, result;
-
+  init_pool_alloc();
   lua_State *L = lua_newstate(alloc_entry,NULL);
   {
-	  luaL_requiref(L, "alloc", luaopen_alloc, 1);
+	luaL_requiref(L, "alloc", luaopen_alloc, 1);
     lua_pop(L, 1);  /* remove lib */
   }
   //lua_State *L = luaL_newstate();  /* create state */
