@@ -13,7 +13,10 @@ include_directories(
     ../src/allocator
 )
 
+
 add_executable(
     lua54
     ${c_files}
 )
+
+target_link_libraries(lua54 m)

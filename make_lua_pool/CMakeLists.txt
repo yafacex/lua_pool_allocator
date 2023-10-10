@@ -19,3 +19,5 @@ add_executable(
     lua54_pool
     ${c_files}
 )
+
+target_link_libraries(lua54_pool m)

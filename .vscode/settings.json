@@ -1,3 +1,4 @@
 {
-	"editor.snippetSuggestions": "bottom"
+	"editor.snippetSuggestions": "bottom",
+	"cmake.sourceDirectory": "/home/yfx/Desktop/MyGit/lua_pool_allocator/make_lua_pool"
 }
